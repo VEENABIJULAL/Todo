@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +12,19 @@ export class LoginComponent implements OnInit {
 uid="User-id please";
 pswd="";
 
-accountdetails:any={
-  1000: {uid:1000, username:"userone", password:"userone",todo:""},
-  1001: {uid:1001, username:"usertwo", password:"usertwo", todo:""},
-  1002: {uid:1002, username:"userthree", password:"userthree", todo:""},
-  1003: {uid:1003, username:"userfour", password:"userfour", todo:""},
-}
 
-  constructor() { }
+  constructor(private router:Router,private dataservice:DataService) { }
 
   ngOnInit(): void {
   }
   login(){
     var uid=this.uid;
     var pswd=this.pswd;
-    let users=this.accountdetails;
+    let users=this.dataservice.accountdetails;
     if(uid in users){
       if(pswd==users[uid]["password"]){
         alert("login successful");
+        this.router.navigateByUrl("todo")
       }else{
         alert("Incorrect password");
       }
@@ -38,7 +35,7 @@ accountdetails:any={
     
   }
   register(){
-    alert("register clicked");
+    this.router.navigateByUrl("register")
   }
 
 }
