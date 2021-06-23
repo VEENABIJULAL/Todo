@@ -4,12 +4,12 @@
         <div class="col-4">
             <div class="main">
                 <h4>Welcome to TO-DO </h4>
-                <h5>Register Here</h5><br>
+                <h5>Login Here</h5><br>
             <form  (ngSubmit)="login()">
-            <input type="text" placeholder="Account number"  class="text" name="acno"  ><br><br>
+            <input type="text" placeholder="Userid"  class="text" name="uid" [(ngModel)]="uid" ><br><br>
            
 
-            <input type="password" placeholder="password" class="text" name="pswd" ><br><br>
+            <input type="password" placeholder="password" class="text" name="pswd" [(ngModel)]="pswd"><br><br>
            
 
             <input type="submit" value="Login" class="button butefct" ><br><br>
