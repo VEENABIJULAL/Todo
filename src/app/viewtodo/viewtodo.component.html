@@ -1,0 +1,28 @@
+<form>
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col">
+                    <h1>Todo History</h1><br>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th >Todo List</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let data of datas;let i=index;">
+                               <td>{{data}}</td>
+
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

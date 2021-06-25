@@ -19,19 +19,32 @@ pswd="";
   }
   login(){
     var uid=this.uid;
-    var pswd=this.pswd;
-    let users=this.dataservice.accountdetails;
-    if(uid in users){
-      if(pswd==users[uid]["password"]){
-        alert("login successful");
-        this.router.navigateByUrl("todo")
-      }else{
-        alert("Incorrect password");
-      }
-    }
-    else{
-      alert("Invalid account");
-    }
+   
+   var pswd=this.pswd;
+   this.dataservice.login(uid,pswd)
+   .subscribe((result:any)=>{
+   if(result){
+     alert(result.message)
+     localStorage.setItem("name",result.name);
+     localStorage.setItem("userid",result.userid);
+     this.router.navigateByUrl("todo");
+   }
+ },
+ (result)=>{
+  alert(result.error.message);
+ } )
+
+
+
+
+ //   var uid=this.uid;
+ //   var pswd=this.pswd;
+ //   const result=this.dataservice.login(uid,pswd)
+ //   if(result){
+  //    alert("login successful");
+ //       this.router.navigateByUrl("todo")
+ //   }
+    
     
   }
   register(){

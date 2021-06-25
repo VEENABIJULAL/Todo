@@ -1,1 +1,14 @@
-<p>todo works!</p>
+<div class="header">
+    <h2>Todo App</h2><br>
+    <div>
+        <form (ngSubmit)="add()">
+            <div class="row">
+                <input class="input-todo" type="text" placeholder="Userid" name="uid" [(ngModel)]="uid">
+                <input class="input-todo" type="text" placeholder="Add a Todo" name="todo" [(ngModel)]="todo">
+                <input type="submit" value="ADD">
+                <input type="submit" value="View Event" (click)="showTodos()"><br>
+
+            </div>
+        </form>
+    </div>
+</div>

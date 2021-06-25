@@ -19,21 +19,26 @@ pswd="";
     var uname=this.uname;
     var uid=this.uid;
     var pswd=this.pswd;
-    let users=this.dataservice.accountdetails;
-    if(uid in users){
-      alert("User exist ,please login...");
-    }
-    else{
-      users[uid]={
-        uid,
-        username:uname,
-        password:pswd
 
-      }
-      alert("Successfully registered");
-      this.router.navigateByUrl("")
+    this.dataservice.register(uname,uid,pswd)
+    .subscribe((result:any)=>{
+      if(result){
+        alert(result.message);
+        this.router.navigateByUrl("");
     }
-
+    
+    },
+    (result)=>{
+      alert(result.error.message);
+     } )
+  //  const result=this.dataservice.register(uname,uid,pswd)
+  //  if(result){
+  //    alert("Successfully registered");
+  //    this.router.navigateByUrl("")
+  //  }
+  //  else{
+  //    alert("User exist ,please login...");
+   // }
    
   }
 
