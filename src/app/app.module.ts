@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { ViewtodoComponent } from './viewtodo/viewtodo.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ViewtodoComponent } from './viewtodo/viewtodo.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule,
+    BrowserAnimationsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-viewtodo',
@@ -8,7 +9,12 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./viewtodo.component.css']
 })
 export class ViewtodoComponent implements OnInit {
-  datas="";
+
+ 
+  datas:any;
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.datas,event.previousIndex, event.currentIndex);
+  }
   
   constructor(private dataservice:DataService,private router:Router) {
     var uid=localStorage.getItem("userid")
@@ -26,6 +32,11 @@ export class ViewtodoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+
   }
+  addtodo(){
+    this.router.navigateByUrl("todo")
+  }
+
   
 }
