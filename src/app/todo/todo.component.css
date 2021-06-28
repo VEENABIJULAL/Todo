@@ -4,7 +4,7 @@
     align-items: center;
     background-color: orange;
     border-radius: 8px;
-    padding: 5%;
+    padding: 4%;
     margin-top: 10%;
   
     margin-left: 35%;
@@ -34,11 +34,10 @@ h2{
 .text{
     border: 1px solid black;
     border-radius: 6px;
-    width: 75%;
+    width:90%;
     font-size: 17px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 12%;
-    padding-left: 5px;
+    margin-left: 5%;
 }
 .text:focus,text:focus{
     outline: none;

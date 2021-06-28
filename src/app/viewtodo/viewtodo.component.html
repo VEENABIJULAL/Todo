@@ -10,9 +10,12 @@
                 <h2>ToDo List</h2>
                 <mat-card *ngFor="let data of datas;let i=index;" cdkDrag>
                     <mat-card-header>
-                        <mat-card-title>{{data}}</mat-card-title>
+                        <mat-card-title>{{data["todo"]}}</mat-card-title>
+                        
                     </mat-card-header>
+                
                 </mat-card>
+            
             </div>
         </div>
     </div>

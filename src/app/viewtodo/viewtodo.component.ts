@@ -10,23 +10,28 @@ import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 })
 export class ViewtodoComponent implements OnInit {
 
- 
+ //_id=60d9a7d93ed4b221a81fce26;
   datas:any;
+  user:any
   drop(event: CdkDragDrop<string[]>) {
     moveItemInArray(this.datas,event.previousIndex, event.currentIndex);
   }
   
   constructor(private dataservice:DataService,private router:Router) {
-    var uid=localStorage.getItem("userid")
-  console.log(uid);
-  this.dataservice.view(uid) 
+   // this.user=localStorage.getItem("todos");
+   // console.log(this.user);
+    
+    
+  this.dataservice.view() 
  .subscribe((result:any)=>{
    if(result){
-     this.datas=result.message
+     console.log(result.message);
+     
+    this.datas=result.message
    }
   },
   (result)=>{
-    alert(result.error.message)
+   alert(result.error.message)
   
  })
    }
@@ -37,6 +42,6 @@ export class ViewtodoComponent implements OnInit {
   addtodo(){
     this.router.navigateByUrl("todo")
   }
-
+  
   
 }

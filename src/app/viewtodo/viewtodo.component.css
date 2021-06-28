@@ -12,7 +12,7 @@
     vertical-align: top;
   }
   
-  .movie-list {
+  .data-list {
     width: 80%;
     border: solid 1px #ccc;
     min-height: 60px;
@@ -23,7 +23,7 @@
     margin-top: 25px;
   }
   
-  .movie-block {
+  .data-block {
     padding: 20px 10px;
     border-bottom: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
@@ -72,7 +72,7 @@ h2{
   margin-left: 60%;
 }
 .mat-card{
-  margin-top: 10px;
+  margin-top: 15px;
   margin-left: 250px;
   height: 50px;
   width: 350px;
@@ -83,6 +83,10 @@ h2{
 }
 .button{
   margin-top: 15%;
+}
+.del{
+  margin-left: 30%;
+  height: 30px;
 }
 
   

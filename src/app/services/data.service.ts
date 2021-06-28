@@ -19,73 +19,23 @@ export class DataService {
 
   constructor(private router:Router,private http:HttpClient) { }
 
-  register(uname:any,uid:any,pswd:any){
-
-      const data={
-        uname,
-        uid,
-        pswd
-      }
-  
-      return this.http.post("http://localhost:3000/register",data)
-//    let users=this.accountdetails;
-//    if(uid in users){
-//      return false;
-    
-//    }
-//    else{
-//      users[uid]={
-//        uid,
-//        username:uname,
-//        password:pswd
-
-//      }
-//      return true;
-      
- //   }
-
-  }
-  login(uid:any,pswd:any){
-    const data={
-      uid,
-      pswd
-    }
-
-    return this.http.post("http://localhost:3000/login",data,options)
-
-
-  //  let users=this.accountdetails;
-  //  if(uid in users){
-  //    if(pswd==users[uid]["password"]){
-  //      return true;
-        
- //     }else{
- //       alert("Incorrect password");
-  //      return false;
-  //    }
-  //  }
-  //  else{
-  //    alert("Invalid account");
-  //    return false;
-  //  }
-  }
-  add(uid:any,todo:any){
+ 
+  add(todo:any){
 
     
     const data={
-      uid,
       todo
     }
 
     return this.http.post("http://localhost:3000/add",data,options)
 
   }
-  view(uid:any){
+  view(){
     //  let userid=this.currentid;
-      const data={
-        uid
-      }
-      return this.http.post("http://localhost:3000/view",data,options)
+      // const data={
+      //   _id
+      // }
+      return this.http.post("http://localhost:3000/view",options)
  
 }
 }

@@ -9,7 +9,6 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-  uid="";
   todo="";
 
 
@@ -25,13 +24,14 @@ export class TodoComponent implements OnInit {
  
   
   add(){
-    var uid=this.uid;
     var todo=this.todo;
     console.log(todo);
-
-    this.dataservice.add(uid,todo)
+   
+    this.dataservice.add(todo)
     .subscribe((result:any)=>{
       if(result){
+        localStorage.setItem("todos",result.todos);
+        
         alert(result.message);
     }
     
